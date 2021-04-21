@@ -1,0 +1,18 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar'); %>
+
+<h1>Login</h1>
+
+<form action="/users/login/passCheck"  method="post">
+
+  <label for="username">Username:</label><br>
+    <input style="color: white;" type="text" id="username" name="username"><br>
+
+  <label for="password">Password:</label><br>
+    <input style="color: white;" type="text" id="password" name="password"><br>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<%- include('../partials/footer'); %>

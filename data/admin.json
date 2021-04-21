@@ -1,0 +1,16 @@
+{
+  "0": {
+    "id": 0,
+    "username": "TechSupport",
+    "email": "ursula.c.parker@gmail.com",
+    "Comments": [
+      "1",
+      "0"
+    ],
+    "Discussions": [
+      "3"
+    ],
+    "points": 16,
+    "isAdmin": true
+  }
+}

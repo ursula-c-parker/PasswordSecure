@@ -1,0 +1,16 @@
+{
+  "0": {
+    "id": 0,
+    "postID": "0",
+    "author": "works",
+    "content": "works",
+    "creationDate": "3/16/2021"
+  },
+  "1": {
+    "id": 1,
+    "postID": "1",
+    "author": "tst",
+    "content": "ertyui",
+    "creationDate": "4/19/2021"
+  }
+}

@@ -1,0 +1,90 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar'); %>
+
+<h1>Discussion:</h1>
+
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card blue-grey darken-1" style="display: block">
+      <div class="card-content white-text">
+        <p>Posted by: <%= discussion.admin %></p>
+        <h4><%= discussion.title %></h4>
+        <h6><%= discussion.content %></h6>
+        <p>Last edited: <%= discussion.creationDate %></p>
+      </div>
+      <div class="card-action" id="editDiscussion">
+        <a href="/discussions/editDiscussion/<%= discussion.id %>">Edit Discussion</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-left:75px;">
+  <div class="col s12 m12">
+
+    <% for(let i=0; i<Object.keys(comments).length; i++){ %>
+      <div class="card blue-grey darken-1" style="display: block">
+        <div class="card-content white-text">
+          <p>Posted by: <%= comments[Object.keys(comments)[i]].author %></p>
+          <h4><%= comments[Object.keys(comments)[i]].content %></h4>
+
+        </div>
+        <div class="card-action" id="<%= comments[Object.keys(comments)[i]].author %>">
+          <form action="/discussions/discussion/comment/<%=comments[Object.keys(comments)[i]].id%>?_method=DELETE" method="POST">
+            <button>Delete Comment</button>
+          </form>
+        </div>
+
+        <script>
+          console.log(localStorage.getItem("username"))
+          console.log("<%= comments[Object.keys(comments)[i]].author %>")
+
+          if (localStorage.getItem("username") == "<%= comments[Object.keys(comments)[i]].author %>") {
+            console.log("true")
+            //document.getElementById("deleteComment").style.display = "block"
+          }else {
+            document.getElementById("<%= comments[Object.keys(comments)[i]].author %>").style.display = "none"
+          }
+        </script>
+
+      </div>
+    <%}%>
+
+  </div>
+</div>
+
+<h1>New Comment:</h1>
+
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card blue-grey darken-1" style="display: block">
+      <div class="card-content white-text">
+
+        <form action="/discussions/discussion/comment/<%=discussion.id%>" method="post">
+          <input type="hidden" id="author" name="author"><br>
+          <script>
+            document.getElementById("author").value = localStorage.getItem("username")
+          </script>
+          <label for="content">Comment Content:</label><br>
+            <input style="color: white;" type="text" id="content" name="content"><br>
+          <input type="submit" value="Submit">
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%- include('../partials/footer'); %>
+
+<script>
+
+  if (localStorage.getItem("isAdmin") == "true" && localStorage.getItem("username") == "<%= discussion.admin %>") {
+    document.getElementById("editDiscussion").style.display = "block"
+  }else {
+    document.getElementById("editDiscussion").style.display = "none"
+  }
+
+</script>

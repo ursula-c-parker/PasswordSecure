@@ -1,0 +1,21 @@
+{
+  "0": {
+    "id": 0,
+    "username": "user",
+    "email": "testy@gmail.com",
+    "Comments": [
+      "5",
+      "4"
+    ],
+    "points": 15,
+    "isAdmin": false
+  },
+  "1": {
+    "id": 1,
+    "username": "anotheruser",
+    "email": "1234ghjbvgh@fghjk.fgh",
+    "Comments": [],
+    "points": 0,
+    "isAdmin": false
+  }
+}

@@ -1,0 +1,11 @@
+<script>
+  var loggedIn = <%- loggedIn %>;
+  var isAdmin = <%- isAdmin %>;
+  var username = "<%- username %>";
+
+  localStorage.setItem("loggedIn", loggedIn)
+  localStorage.setItem("isAdmin", isAdmin)
+  localStorage.setItem("username", username)
+
+  window.location.replace("/");
+</script>

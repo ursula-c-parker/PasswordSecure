@@ -1,0 +1,24 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar'); %>
+
+<h1>New Discussion</h1>
+
+<form action="/discussions/discussion"  method="post">
+
+  <input type="hidden" id="admin" name="admin"><br>
+  <script>
+    document.getElementById("admin").value = localStorage.getItem("username")
+  </script>
+
+  <label for="title">Discussion Title:</label><br>
+    <input style="color: white;" type="text" id="title" name="title"><br/>
+
+  <label for="content">Discussion Content:</label><br>
+    <input style="color: white;" type="text" id="content" name="content"><br/>
+
+    <br />
+  <input type="submit" value="Submit">
+
+</form>
+
+<%- include('../partials/footer'); %>

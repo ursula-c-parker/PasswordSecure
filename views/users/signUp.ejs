@@ -1,0 +1,21 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar'); %>
+
+<h1>Sign Up</h1>
+
+<form action="/users/user"  method="post">
+
+  <label for="username">Username:</label><br>
+    <input style="color: white;" type="text" id="username" name="username"><br>
+
+  <label for="email">Email Address:</label><br>
+    <input style="color: white;" type="text" id="email" name="email"><br>
+
+    <label for="password">Password:</label><br>
+      <input style="color: white;" type="text" id="password" name="password"><br>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<%- include('../partials/footer'); %>

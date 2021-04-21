@@ -1,0 +1,31 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar'); %>
+
+<h1>Edit Discussion</h1>
+
+<form action="/discussions/discussion/<%=discussion.id%>"  method="post">
+
+  <h1><%=discussion.id%></h1>
+
+  <input type="hidden" id="admin" name="admin"><br>
+  <script>
+    document.getElementById("admin").value = localStorage.getItem("username")
+  </script>
+
+  <label for="title"><%=discussion.title%>:</label><br>
+    <input style="color: white;" type="text" id="title" name="title"><br>
+
+  <label for="content"><%=discussion.content%>:</label><br>
+    <input style="color: white;" type="text" id="content" name="content"><br>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<br />
+
+<form action="/discussions/discussion/<%=discussion.id%>?_method=DELETE" method="POST">
+  <button>Delete Discussion</button>
+</form>
+
+<%- include('../partials/footer'); %>

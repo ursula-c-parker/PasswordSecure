@@ -1,0 +1,23 @@
+<%- include('partials/header'); %>
+<%- include('partials/navbar'); %>
+
+<h1>Site Checker</h1>
+
+<input id="searchbar"/>
+
+<p>
+  <%= JSON.stringify(results) %>
+</p>
+
+<script>
+
+  document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      let searchedTerm = document.getElementById("searchbar").value
+      window.location.href = "/siteChecker/"+searchedTerm
+    }
+  });
+
+</script>
+
+<%- include('partials/footer'); %>
