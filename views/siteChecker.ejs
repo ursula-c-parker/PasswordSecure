@@ -2,12 +2,20 @@
 <%- include('partials/navbar'); %>
 
 <h1>Site Checker</h1>
+<p>Type in the name of a site:</p>
 
-<input id="searchbar"/>
+<input id="searchbar" style="color:white"/>
 
-<p>
-  <%= JSON.stringify(results) %>
-</p>
+<% if (Object.keys(results).length > 9) { %>
+  <h6>Name: <%= results.Name %></h6>
+  <h6>Domain: <%= results.Domain %></h6>
+  <h6>Breach Date: <%= results.BreachDate %></h6>
+  <h6>Pwn Count: <%= results.PwnCount %></h6>
+  <h6>Description: <%= results.Description %></h6>
+<%}else{ %>
+  <h6>This site is not pwned!</h6>
+<%} %>
+
 
 <script>
 
